@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     daemons (1.1.9)
+    dino (0.11.2)
+      serialport
     eventmachine (1.0.3)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
@@ -28,6 +30,7 @@ GEM
       redis (~> 3.0.0)
     rufus-scheduler (2.0.23)
       tzinfo (>= 0.3.23)
+    serialport (1.1.0)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -40,6 +43,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dino
   iremocon
   lita (= 2.2.0)
   lita-hipchat

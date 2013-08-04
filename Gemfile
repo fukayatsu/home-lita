@@ -5,3 +5,4 @@ gem "lita-hipchat"
 gem "lita-schedule", '0.0.2'
 
 gem 'iremocon'
+gem 'dino'
