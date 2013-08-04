@@ -1,14 +1,7 @@
 source "https://rubygems.org"
 
-gem "lita"
-
-# Uncomment to use the HipChat adapter
+gem "lita", '2.2.0'
 gem "lita-hipchat"
+gem "lita-schedule", '0.0.2'
 
-# Uncomment to use the IRC adapter
-# gem "lita-irc"
-
-# Add handlers to give Lita new functionality.
-# For example:
-# gem "lita-google-images"
-# gem "lita-karma"
+gem 'iremocon'
