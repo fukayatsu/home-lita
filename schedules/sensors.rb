@@ -23,8 +23,8 @@ module Lita
       private
 
       def fetch_temperature
-        board = Dino::Board.new(Dino::TxRx.new)
-        temperature_sensor = Dino::Components::Sensor.new(pin: 'A2', board: board)
+        @board ||= Dino::Board.new(Dino::TxRx.new)
+        temperature_sensor = Dino::Components::Sensor.new(pin: 'A2', board: @board)
 
         temp_dataset = []
         temperature_sensor.when_data_received do |data|
@@ -37,8 +37,8 @@ module Lita
       end
 
       def fetch_lights
-        board = Dino::Board.new(Dino::TxRx.new)
-        light_sensor       = Dino::Components::Sensor.new(pin: 'A0', board: board)
+        @board ||= Dino::Board.new(Dino::TxRx.new)
+        light_sensor       = Dino::Components::Sensor.new(pin: 'A0', board: @board)
 
         light_dataset = []
         light_sensor.when_data_received do |data|
@@ -51,8 +51,8 @@ module Lita
       end
 
       def fetch_humidity
-        board = Dino::Board.new(Dino::TxRx.new)
-        humidity_sensor    = Dino::Components::Sensor.new(pin: 'A3', board: board)
+        @board ||= Dino::Board.new(Dino::TxRx.new)
+        humidity_sensor    = Dino::Components::Sensor.new(pin: 'A3', board: @board)
 
         humidity_dataset = []
         humidity_sensor.when_data_received do |data|
