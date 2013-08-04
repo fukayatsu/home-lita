@@ -1,0 +1,14 @@
+# rename to settings.yaml
+hipchat:
+  jid: foo_123@chat.hipchat.com
+  password: 'bar****'
+  rooms:
+    lights: '12345_baz@conf.hipchat.com'
+
+iremocon:
+  address: 192.168.11.2
+  commands:
+    'lights off' : 1
+    'lights on'  : 2
+    'cooling off': 11
+    'cooling on' : 12
