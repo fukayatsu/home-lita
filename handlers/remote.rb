@@ -41,7 +41,7 @@ module Lita
           Lita.config.iremocon = nil
 
           retry_count -= 1
-          sleep 1
+          sleep 3
           retry if retry_count >= 0
         end
 
