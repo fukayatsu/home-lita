@@ -39,6 +39,7 @@ module Lita
         rescue Errno::EPIPE
           # 接続を初期化
           Lita.config.iremocon = nil
+          puts "send_ray[#{number}] retry[#{retry_count}]"
 
           retry_count -= 1
           sleep 3
