@@ -2,12 +2,17 @@ module Lita
   module Schedules
     class Lights < Schedule
 
+      cron('* * * * * Asia/Tokyo', :iremocon_keep_alive)
       cron('0 8 * * * Asia/Tokyo', :turn_lights_on)
       cron('0 1 * * * Asia/Tokyo', :turn_lights_off)
 
       def self.default_config(schedule_config)
         schedule_config.iremocon = nil
         schedule_config.room     = nil
+      end
+
+      def iremocon_keep_alive
+        iremocon.au
       end
 
       def turn_lights_on
