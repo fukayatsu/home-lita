@@ -35,7 +35,6 @@ module Lita
       def send_ray(number, retry_count: 3)
         begin
           iremocon.is(number) # IR_send
-          iremocon.au # check connection
           return true
         rescue Errno::EPIPE
           # 接続を初期化
