@@ -1,14 +1,29 @@
+require 'net/ping'
+
 module Lita
   module Schedules
     class Lights < Schedule
 
+      every('10s', :ping_mobile)
       cron('* * * * * Asia/Tokyo', :iremocon_keep_alive)
       cron('0 8 * * * Asia/Tokyo', :turn_lights_on)
       cron('0 1 * * * Asia/Tokyo', :turn_lights_off)
 
       def self.default_config(schedule_config)
-        schedule_config.iremocon = nil
-        schedule_config.room     = nil
+        schedule_config.iremocon  = nil
+        schedule_config.room      = nil
+        schedule_config.lights_on = nil
+      end
+
+      def ping_mobile
+        status = Net::Ping::External.new('10.0.1.99', nil, 1).ping?
+        if Lita.config.schedules.lights.lights_on == true && status == false
+          turn_lights_off
+        elsif Lita.config.schedules.lights.lights_on == false && status == true
+          turn_lights_on
+        end
+
+        Lita.config.schedules.lights.lights_on = status
       end
 
       def iremocon_keep_alive
