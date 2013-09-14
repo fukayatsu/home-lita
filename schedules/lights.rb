@@ -16,7 +16,12 @@ module Lita
       end
 
       def ping_mobile
-        status = Net::Ping::External.new('10.0.1.99', nil, 1).ping?
+        status = false
+        3.times do
+          status = Net::Ping::External.new('10.0.1.99', nil, 1).ping?
+          break if status
+        end
+
         if Lita.config.schedules.lights.lights_on == true && status == false
           turn_lights_off
         elsif Lita.config.schedules.lights.lights_on == false && status == true
