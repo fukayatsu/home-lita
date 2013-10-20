@@ -17,8 +17,10 @@ module Lita
 
       def ping_mobile
         status = false
-        3.times do
-          status = Net::Ping::External.new('10.0.1.99', nil, 1).ping?
+        2.times do
+          # status = Net::Ping::External.new('10.0.1.99', nil, 1).ping?
+          ping_script_path = File.expand_path(File.dirname(__FILE__) + '/../ping/mobile.rb')
+          status = `/usr/local/bin/macruby #{ping_script_path}` == 'true'
           break if status
         end
 
