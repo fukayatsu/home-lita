@@ -12,7 +12,7 @@ module Lita
       cron '0   20 * * * Asia/Tokyo',  :back_home
       cron '0   23 * * * Asia/Tokyo',  :calm_down
       cron '25  1  * * * Asia/Tokyo',  :bed_down
-      cron '30  1  * * * Asia/Tokyo',  :sleep
+      cron '30  1  * * * Asia/Tokyo',  :sleeping
 
       def self.default_config(schedule_config)
         schedule_config.iremocon  = nil
@@ -75,7 +75,7 @@ module Lita
         exec_command 'heater off'
       end
 
-      def sleep
+      def sleeping
         exec_command 'lights off'
       end
 
