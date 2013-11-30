@@ -2,7 +2,7 @@ module Lita
   module Schedules
     class Sensors < Schedule
 
-      cron('0,30 * * * * Asia/Tokyo', :report_status)
+      cron('*/10 * * * * Asia/Tokyo', :report_status)
 
       def self.default_config(schedule_config)
         schedule_config.room     = nil

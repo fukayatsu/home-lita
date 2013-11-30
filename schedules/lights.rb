@@ -8,7 +8,7 @@ module Lita
       cron '*   *  * * * Asia/Tokyo',  :iremocon_keep_alive
       cron '0   8  * * * Asia/Tokyo',  :wake_up
       cron '30  8  * * * Asia/Tokyo',  :turn_out
-      cron '30  10 * * * Asia/Tokyo',  :go_out
+      cron '5   10 * * * Asia/Tokyo',  :go_out
       cron '0   20 * * * Asia/Tokyo',  :back_home
       cron '0   23 * * * Asia/Tokyo',  :calm_down
       cron '25  1  * * * Asia/Tokyo',  :bed_down
@@ -89,6 +89,7 @@ module Lita
         ray_number = ir_config['commands'][command]
         if send_ray(ray_number)
           robot.send_message(target, "[#{command}] ok")
+          sleep 3
         else
           robot.send_message(target, "[#{command}] failure")
         end
