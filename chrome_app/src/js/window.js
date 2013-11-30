@@ -44,8 +44,8 @@
       console.log('chrome.storage.onChanged');
     }
   });
-  chrome.storage.sync.get("settings", function(json) {
-    valueChanged(JSON.parse(json));
+  chrome.storage.sync.get("settings", function(data) {
+    valueChanged(JSON.parse(data.settings));
     console.log('chrome.storage.sync.get')
   });
   console.log('start')
