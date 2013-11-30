@@ -20,6 +20,5 @@
     "16": "image/icon_16.png",
     "128": "image/icon_128.png"
   },
-  "offline_enabled": true,
-  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw9FGAMGHf/gdYyDO244QmDDVRIFmfwXsmmTtjyx4+Q1uhQ/IG0RjeO0RU1tB9bW/ZF4ZjTjLCl1bnpO5b0T1yrSfZkuEH20qSclVtrkMJo3LgGSaytR0bG2KN4CsHyCOCxalUEKJRou+4a064hh7sUoABXj8jw7PaJ4KsvElkbfHjDzq6cArFuVslwhucO1qIfO1+smagkOJpOl1vV0sZILE3u5+hyTg4/YoWpWgIgWqkKVpU8c4eUzpfAaB+yasM9zcKB9j5BCJq6cHtfFO+uezDBv7zmHcU9faJm/lVuvTNeKMsmiwyzJR3G4W1Ggkma2FcwkqZxvli+QF7LI+GQIDAQAB"
+  "offline_enabled": true
 }
