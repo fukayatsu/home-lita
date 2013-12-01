@@ -6,7 +6,10 @@ require "lita-schedule"
 require 'iremocon'
 require 'dino'
 
+require 'say/japanese'
+
 require_relative 'handlers/remote'
+require_relative 'handlers/voice'
 require_relative 'schedules/lights'
 require_relative 'schedules/sensors'
 

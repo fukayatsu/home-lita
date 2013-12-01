@@ -33,6 +33,7 @@ GEM
       redis (~> 3.0.0)
     rufus-scheduler (2.0.24)
       tzinfo (>= 0.3.22)
+    say-japanese (0.0.1)
     serialport (1.1.0)
     thin (1.5.1)
       daemons (>= 1.0.9)
@@ -52,3 +53,4 @@ DEPENDENCIES
   lita-hipchat
   lita-schedule (= 0.0.3)
   net-ping (~> 1.7.0)
+  say-japanese
