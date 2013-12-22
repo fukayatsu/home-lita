@@ -7,6 +7,7 @@ require 'iremocon'
 require 'dino'
 
 require 'say/japanese'
+require 'weather_jp'
 
 require_relative 'handlers/remote'
 require_relative 'handlers/voice'

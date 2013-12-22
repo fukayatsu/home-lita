@@ -8,3 +8,5 @@ gem 'iremocon'
 gem 'dino'
 gem "net-ping", "~> 1.7.0"
 gem 'say-japanese'
+
+gem 'weather_jp'
