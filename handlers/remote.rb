@@ -3,7 +3,7 @@ module Lita
     class Remote < Handler
 
       route /^remote (.+)$/, :execute, command: true
-      route /^\[(.+)\]$/,    :execute, command: false
+      route /^\[([^？]+)\]$/,    :execute, command: false
 
       def self.default_config(handler_config)
         handler_config.iremocon = nil
