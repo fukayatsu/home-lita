@@ -10,8 +10,8 @@ module Lita
         when '今何時'
           say "#{Time.now.strftime('%H:%M')}です。"
         when '今日の天気は'
-          shibuya = WeatherJp.get :shibuya
-          say shibuya.today.to_s
+          weather = WeatherJp.get :shibuya
+          say weather.today.to_s.gsub('東京都 渋谷区の今日の天気は', '')
         end
       end
 

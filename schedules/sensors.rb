@@ -2,7 +2,7 @@ module Lita
   module Schedules
     class Sensors < Schedule
 
-      cron('*/10 * * * * Asia/Tokyo', :report_status)
+      cron('*/30 * * * * Asia/Tokyo', :report_status)
 
       def self.default_config(schedule_config)
         schedule_config.room     = nil
@@ -18,6 +18,8 @@ module Lita
         room   = Lita.config.schedules.lights.room
         target = Struct.new(:room).new(room)
         robot.send_message(target, status)
+      rescue => e
+        @board = nil
       end
 
       private

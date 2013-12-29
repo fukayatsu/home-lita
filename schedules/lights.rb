@@ -39,7 +39,12 @@ module Lita
       # end
 
       def iremocon_keep_alive
-        iremocon.au
+        begin
+          iremocon.au
+        rescue Exception => e
+          puts 'reconnect iremocon'
+          Lita.config.iremocon = Iremocon.new(ir_config['address'])
+        end
       end
 
       def wake_up
